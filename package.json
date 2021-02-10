@@ -1,6 +1,6 @@
 {
   "name": "helsenorge-questionnaire-extensions-beta",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A resource for questionnare-extensions for helsenorge",
   "main": "dist/index.js",
   "types" : "dist/index.d.ts",
