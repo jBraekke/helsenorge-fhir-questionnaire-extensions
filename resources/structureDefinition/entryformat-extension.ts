@@ -1,4 +1,4 @@
-const extension = {
+const entryformatExtension = {
     structureDefinition: {
         xmlns: "http://hl7.org/fhir",
         id: "entryFormat",
@@ -81,13 +81,12 @@ const extension = {
                     id: "Extension.value[x]",
                     path: "Extension.value[x]",
                     min: "1",
-                    type: {
-                        code: "string"
-                    }
+                    type: ["string"]
+                    
                 }
             ]
         }
     }
 }
 
-export default extension;
+export default entryformatExtension;
