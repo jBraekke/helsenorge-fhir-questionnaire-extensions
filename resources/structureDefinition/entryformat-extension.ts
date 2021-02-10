@@ -1,3 +1,5 @@
+import { Extension } from '../../types/fhir';
+
 const entryformatExtension = {
         xmlns: "http://hl7.org/fhir",
         id: "entryFormat",
@@ -85,6 +87,6 @@ const entryformatExtension = {
                 }
             ]
         }
-    }
+    } as Extension;
 
 export default entryformatExtension;

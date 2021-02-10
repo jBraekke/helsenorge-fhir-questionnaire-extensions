@@ -1,3 +1,5 @@
+import { Extension } from "../../types/fhir";
+
 const maxValueExtension = {
     xmlns: "http://hl7.org/fhir",
     id: "maxValue",
@@ -79,6 +81,6 @@ const maxValueExtension = {
             }
         ]
     }
-}
+} as Extension;
 
 export default maxValueExtension;
