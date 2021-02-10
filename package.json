@@ -1,6 +1,6 @@
 {
   "name": "helsenorge-questionnaire-extensions-beta",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A resource for questionnare-extensions for helsenorge",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/jBraekke/helsenorge-fhir-questionnaire-extensions/issues"
   },
-  "homepage": "https://github.com/jBraekke/helsenorge-fhir-questionnaire-extensions#readme"
+  "homepage": "https://github.com/jBraekke/helsenorge-fhir-questionnaire-extensions#readme",
+  "dependencies": {
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.25",
+    "@types/xml2js": "^0.4.8"
+  }
 }

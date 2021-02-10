@@ -1,5 +1,4 @@
 const entryformatExtension = {
-    structureDefinition: {
         xmlns: "http://hl7.org/fhir",
         id: "entryFormat",
         extension: [
@@ -87,6 +86,5 @@ const entryformatExtension = {
             ]
         }
     }
-}
 
 export default entryformatExtension;
