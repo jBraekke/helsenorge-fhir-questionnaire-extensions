@@ -1,4 +1,3 @@
-import { Extension } from './types/fhir';
 import entryFormat from './resources/structureDefinition/entryformat-extension';
 import maxValue from './resources/structureDefinition/maxvalue-extension';
 
@@ -7,4 +6,4 @@ export {
     maxValue
 };
 
-export default [entryFormat, maxValue] as Extension[];
+export default [entryFormat, maxValue];
