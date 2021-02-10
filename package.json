@@ -1,0 +1,22 @@
+{
+  "name": "helsenorge-questionnaire-extensions-beta",
+  "version": "1.0.0",
+  "description": "A resource for questionnare-extensions for helsenorge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jBraekke/helsenorge-fhir-questionnaire-extensions.git"
+  },
+  "keywords": [
+    "fhir"
+  ],
+  "author": "Jørgen Brække",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jBraekke/helsenorge-fhir-questionnaire-extensions/issues"
+  },
+  "homepage": "https://github.com/jBraekke/helsenorge-fhir-questionnaire-extensions#readme"
+}
