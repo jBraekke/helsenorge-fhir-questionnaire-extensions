@@ -1,0 +1,58 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "sdf-questionnaire-endpoint",
+  "meta": {
+    "lastUpdated": "2017-07-14T13:25:51.448+02:00"
+  },
+  "url": "http://ehelse.no/fhir/StructureDefinition/sdf-questionnaire-endpoint",
+  "name": "Endpoint",
+  "status": "draft",
+  "date": "2017-06-15T14:27:59.2241292+02:00",
+  "description": "The base URL for the server to which questionnaire response associated with this questionnaire should be submitted.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Questionnaire"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://ehelse.no/fhir/StructureDefinition/sdf-questionnaire-endpoint"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Extension.value[x]:valueReference",
+        "path": "Extension.value[x]",
+        "sliceName": "valueReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Endpoint"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

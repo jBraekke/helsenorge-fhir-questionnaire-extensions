@@ -1,0 +1,92 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "questionnaire-itemControl",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fhir"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 1
+    }
+  ],
+  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+  "version": "4.0.1",
+  "name": "ItemControl",
+  "status": "draft",
+  "date": "2013-07-04",
+  "publisher": "HL7",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org"
+        }
+      ]
+    }
+  ],
+  "description": "The type of data entry control or structure that should be used to render the item.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Questionnaire.item"
+    },
+    {
+      "type": "element",
+      "expression": "Questionnaire.item.item"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "E.g. Fly-over, Table, Checkbox, Combo-box, Lookup, etc.",
+        "definition": "The type of data entry control or structure that should be used to render the item.",
+        "comment": "Different controls may be appropriate for different item types.  It is up to the system rendering a questionnaire as to what controls it will support and for which data types.",
+        "max": "1"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ItemControl"
+            }
+          ],
+          "strength": "extensible",
+          "description": "User interface controls or widgets used for questionnaire items.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/questionnaire-item-control"
+        }
+      }
+    ]
+  }
+}

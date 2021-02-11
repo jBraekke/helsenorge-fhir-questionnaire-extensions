@@ -1,0 +1,83 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "sdf-Organization",
+  "url": "http://ehelse.no/fhir/StructureDefinition/sdf-Organization",
+  "name": "SDFOrganization",
+  "status": "draft",
+  "date": "2018-04-11T11:04:03.04+02:00",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "definition": "Norwegian national organizational identifiers",
+        "fixedIdentifier": {
+          "use": "official",
+          "type": {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.578.1.12.4.1.4.101",
+                "display": "Organisasjonsnummer"
+              },
+              {
+                "system": "urn:oid:2.16.578.1.12.4.1.4.102",
+                "display": "RESH-Id"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "Organization.identifier:ENH",
+        "path": "Organization.identifier",
+        "sliceName": "ENH",
+        "short": "Organisasjonsnummer",
+        "definition": "Identifikator fra enhetsregisteret"
+      },
+      {
+        "id": "Organization.identifier:ENH.system",
+        "path": "Organization.identifier.system",
+        "min": 1,
+        "fixedUri": "urn:oid:2.16.578.1.12.4.1.2.101"
+      },
+      {
+        "id": "Organization.identifier:ENH.value",
+        "path": "Organization.identifier.value",
+        "min": 1
+      },
+      {
+        "id": "Organization.identifier:RSH",
+        "path": "Organization.identifier",
+        "sliceName": "RSH",
+        "short": "RESH-ID",
+        "definition": "Identifikat fra det nasjonale registeret over enheter i spesialisthelsetjenenesten (RESH-ID)."
+      },
+      {
+        "id": "Organization.identifier:RSH.system",
+        "path": "Organization.identifier.system",
+        "min": 1,
+        "fixedUri": "urn:oid:2.16.578.1.12.4.1.2.102"
+      },
+      {
+        "id": "Organization.identifier:RSH.value",
+        "path": "Organization.identifier.value",
+        "min": 1
+      }
+    ]
+  }
+}

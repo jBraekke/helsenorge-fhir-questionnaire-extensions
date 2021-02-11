@@ -1,0 +1,55 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "sdf-QuestionnaireResponse",
+  "meta": {
+    "lastUpdated": "2017-11-10T15:11:31.402+01:00"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fhir"
+    }
+  ],
+  "url": "http://ehelse.no/fhir/StructureDefinition/sdf-QuestionnaireResponse",
+  "name": "SDFQuestionnaireResponse",
+  "status": "draft",
+  "date": "2017-05-16T11:45:05.6828168+02:00",
+  "description": "To support structured, hierarchical registration of data gathered using digital forms and other questionnaires.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "QuestionnaireResponse",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "QuestionnaireResponse.extension",
+        "path": "QuestionnaireResponse.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "QuestionnaireResponse.extension:discretion",
+        "path": "QuestionnaireResponse.extension",
+        "sliceName": "discretion",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://ehelse.no/fhir/StructureDefinition/sdf-discretion"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

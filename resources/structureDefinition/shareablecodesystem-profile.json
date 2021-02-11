@@ -1,0 +1,104 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "shareablecodesystem",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">to do</div>"
+  },
+  "url": "http://hl7.org/fhir/StructureDefinition/shareablecodesystem",
+  "name": "ShareableCodeSystem",
+  "status": "draft",
+  "experimental": false,
+  "date": "2019-10-24T11:53:00+11:00",
+  "publisher": "HL7",
+  "description": "Enforces the minimum information set for the value set metadata required by HL7 and other organisations that share and publish value sets",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/w5",
+      "name": "W5 Mapping"
+    },
+    {
+      "identity": "objimpl",
+      "uri": "http://hl7.org/fhir/object-implementation",
+      "name": "Object Implementation Information"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "CodeSystem",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CodeSystem",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CodeSystem",
+        "path": "CodeSystem",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "CodeSystem.url",
+        "path": "CodeSystem.url",
+        "min": 1
+      },
+      {
+        "id": "CodeSystem.version",
+        "path": "CodeSystem.version",
+        "min": 1
+      },
+      {
+        "id": "CodeSystem.name",
+        "path": "CodeSystem.name",
+        "min": 1
+      },
+      {
+        "id": "CodeSystem.status",
+        "path": "CodeSystem.status",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "CodeSystem.experimental",
+        "path": "CodeSystem.experimental",
+        "min": 1
+      },
+      {
+        "id": "CodeSystem.publisher",
+        "path": "CodeSystem.publisher",
+        "alias": [
+          "steward"
+        ],
+        "min": 1
+      },
+      {
+        "id": "CodeSystem.description",
+        "path": "CodeSystem.description",
+        "alias": [
+          "scope"
+        ],
+        "min": 1
+      },
+      {
+        "id": "CodeSystem.caseSensitive",
+        "path": "CodeSystem.caseSensitive",
+        "min": 1
+      },
+      {
+        "id": "CodeSystem.concept",
+        "path": "CodeSystem.concept",
+        "min": 1
+      }
+    ]
+  }
+}

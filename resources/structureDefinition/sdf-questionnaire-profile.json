@@ -1,0 +1,396 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "sdf-Questionnaire",
+  "meta": {
+    "lastUpdated": "2018-02-14T13:24:28.119+01:00"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fhir"
+    }
+  ],
+  "url": "http://ehelse.no/fhir/StructureDefinition/sdf-Questionnaire",
+  "name": "SDFQuestionnaire",
+  "status": "draft",
+  "date": "2017-05-09T12:16:50.5767729+02:00",
+  "publisher": "Norwegian Directorate for eHealth",
+  "description": "To support structured, hierarchical registration of data gathered using digital forms and other questionnaires.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Questionnaire",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Questionnaire",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Questionnaire.extension",
+        "path": "Questionnaire.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Questionnaire.extension:endpoint",
+        "path": "Questionnaire.extension",
+        "sliceName": "endpoint",
+        "short": "Where to send this Qu",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://ehelse.no/fhir/StructureDefinition/sdf-questionnaire-endpoint"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.extension:authenticationRequirement",
+        "path": "Questionnaire.extension",
+        "sliceName": "authenticationRequirement",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://ehelse.no/fhir/StructureDefinition/sdf-authenticationrequirement"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.extension:canBePerformedBy",
+        "path": "Questionnaire.extension",
+        "sliceName": "canBePerformedBy",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://ehelse.no/fhir/StructureDefinition/sdf-canbeperformedby"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.extension:accessibilityToResponse",
+        "path": "Questionnaire.extension",
+        "sliceName": "accessibilityToResponse",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://ehelse.no/fhir/StructureDefinition/sdf-accessibilitytoresponse"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.extension:discretion",
+        "path": "Questionnaire.extension",
+        "sliceName": "discretion",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://ehelse.no/fhir/StructureDefinition/sdf-discretion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.name",
+        "path": "Questionnaire.name",
+        "min": 1
+      },
+      {
+        "id": "Questionnaire.title",
+        "path": "Questionnaire.title",
+        "min": 1
+      },
+      {
+        "id": "Questionnaire.item.extension",
+        "path": "Questionnaire.item.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "Questionnaire.item.extension:entryFormat",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "entryFormat",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/entryFormat"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:entryFormat.value[x]",
+        "path": "Questionnaire.item.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Questionnaire.item.extension:entryFormat.value[x]:valueString",
+        "path": "Questionnaire.item.extension.value[x]",
+        "sliceName": "valueString"
+      },
+      {
+        "id": "Questionnaire.item.extension:maxDecimalPlaces",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "maxDecimalPlaces",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:maxDecimalPlaces.value[x]",
+        "path": "Questionnaire.item.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Questionnaire.item.extension:maxDecimalPlaces.value[x]:valueInteger",
+        "path": "Questionnaire.item.extension.value[x]",
+        "sliceName": "valueInteger"
+      },
+      {
+        "id": "Questionnaire.item.extension:maxValue",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "maxValue",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/maxValue"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:minLength",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "minLength",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/minLength"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:minLength.value[x]",
+        "path": "Questionnaire.item.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Questionnaire.item.extension:minLength.value[x]:valueInteger",
+        "path": "Questionnaire.item.extension.value[x]",
+        "sliceName": "valueInteger"
+      },
+      {
+        "id": "Questionnaire.item.extension:minValue",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "minValue",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/minValue"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:regex",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "regex",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/regex"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:regex.value[x]",
+        "path": "Questionnaire.item.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Questionnaire.item.extension:regex.value[x]:valueString",
+        "path": "Questionnaire.item.extension.value[x]",
+        "sliceName": "valueString"
+      },
+      {
+        "id": "Questionnaire.item.extension:validationText",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "validationText",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://ehelse.no/fhir/StructureDefinition/validationtext"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:repeatsText",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "repeatsText",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://ehelse.no/fhir/StructureDefinition/repeatstext"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:itemControl",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "itemControl",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:itemControl.value[x]",
+        "path": "Questionnaire.item.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Questionnaire.item.extension:itemControl.value[x]:valueCodeableConcept",
+        "path": "Questionnaire.item.extension.value[x]",
+        "sliceName": "valueCodeableConcept"
+      },
+      {
+        "id": "Questionnaire.item.extension:hidden",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "hidden",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:hidden.value[x]",
+        "path": "Questionnaire.item.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Questionnaire.item.extension:hidden.value[x]:valueBoolean",
+        "path": "Questionnaire.item.extension.value[x]",
+        "sliceName": "valueBoolean"
+      },
+      {
+        "id": "Questionnaire.item.extension:fhirPath",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "fhirPath",
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://ehelse.no/fhir/StructureDefinition/sdf-fhirpath"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Questionnaire.item.extension:optionReference",
+        "path": "Questionnaire.item.extension",
+        "sliceName": "optionReference",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://ehelse.no/fhir/StructureDefinition/sdf-optionReference"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

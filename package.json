@@ -1,9 +1,9 @@
 {
   "name": "helsenorge-questionnaire-extensions-beta",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "A resource for questionnare-extensions for helsenorge",
   "main": "dist/index.js",
-  "types" : "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"

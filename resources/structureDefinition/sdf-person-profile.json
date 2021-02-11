@@ -1,0 +1,75 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "sdf-Person",
+  "url": "http://ehelse.no/fhir/StructureDefinition/sdf-Person",
+  "name": "SDFPerson",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Person",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Person",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Person.identifier",
+        "path": "Person.identifier",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "open"
+        },
+        "definition": "An identifier for this person. Should be Fødselsnummer or D-nummer"
+      },
+      {
+        "id": "Person.identifier:FNR",
+        "path": "Person.identifier",
+        "sliceName": "FNR"
+      },
+      {
+        "id": "Person.identifier:FNR.system",
+        "path": "Person.identifier.system",
+        "short": "Norwegian FNR",
+        "definition": "Norwegian Fødselsnummer",
+        "min": 1,
+        "fixedUri": "urn:oid:2.16.578.1.12.4.1.4.1"
+      },
+      {
+        "id": "Person.identifier:FNR.value",
+        "path": "Person.identifier.value",
+        "min": 1,
+        "example": [
+          {
+            "label": "Fødselsnummer",
+            "valueString": "13057444850"
+          }
+        ],
+        "maxLength": 11
+      },
+      {
+        "id": "Person.identifier:DNR",
+        "path": "Person.identifier",
+        "sliceName": "DNR"
+      },
+      {
+        "id": "Person.identifier:DNR.system",
+        "path": "Person.identifier.system",
+        "short": "Norwegian DNR",
+        "definition": "Norwegian D-nummer",
+        "min": 1,
+        "fixedUri": "urn:oid:2.16.578.1.12.4.1.4.2"
+      },
+      {
+        "id": "Person.identifier:DNR.value",
+        "path": "Person.identifier.value",
+        "min": 1,
+        "maxLength": 11
+      }
+    ]
+  }
+}

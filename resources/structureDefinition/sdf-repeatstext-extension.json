@@ -1,0 +1,56 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "repeatsText",
+  "meta": {
+    "lastUpdated": "2018-02-02T14:14:14.339+01:00"
+  },
+  "url": "http://ehelse.no/fhir/StructureDefinition/repeatstext",
+  "name": "RepeatsText",
+  "status": "draft",
+  "date": "2017-11-13T08:42:03.967+01:00",
+  "publisher": "The Norwegian Directorate of eHealth",
+  "description": "Text the system will display for the \"Add new item/section\" button.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Questionnaire.item"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://ehelse.no/fhir/StructureDefinition/repeatstext"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Extension.value[x]:valueString",
+        "path": "Extension.value[x]",
+        "sliceName": "valueString",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}

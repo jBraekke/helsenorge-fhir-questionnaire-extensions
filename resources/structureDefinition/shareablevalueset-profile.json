@@ -1,0 +1,99 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "shareablevalueset",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">to do</div>"
+  },
+  "url": "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+  "name": "ShareableValueSet",
+  "status": "draft",
+  "experimental": false,
+  "date": "2019-10-24T11:53:00+11:00",
+  "publisher": "HL7",
+  "description": "Enforces the minimum information set for the value set metadata required by HL7 and other organisations that share and publish value sets",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/w5",
+      "name": "W5 Mapping"
+    },
+    {
+      "identity": "define.xml2.0",
+      "uri": "http://www.cdisc.org/define-xml",
+      "name": "CDISC Define XML 2.0 metadata standard"
+    },
+    {
+      "identity": "objimpl",
+      "uri": "http://hl7.org/fhir/object-implementation",
+      "name": "Object Implementation Information"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "ValueSet",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ValueSet",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "ValueSet",
+        "path": "ValueSet",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "ValueSet.url",
+        "path": "ValueSet.url",
+        "min": 1
+      },
+      {
+        "id": "ValueSet.version",
+        "path": "ValueSet.version",
+        "min": 1
+      },
+      {
+        "id": "ValueSet.name",
+        "path": "ValueSet.name",
+        "min": 1
+      },
+      {
+        "id": "ValueSet.status",
+        "path": "ValueSet.status",
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "ValueSet.experimental",
+        "path": "ValueSet.experimental",
+        "min": 1
+      },
+      {
+        "id": "ValueSet.publisher",
+        "path": "ValueSet.publisher",
+        "alias": [
+          "steward"
+        ],
+        "min": 1
+      },
+      {
+        "id": "ValueSet.description",
+        "path": "ValueSet.description",
+        "alias": [
+          "scope"
+        ],
+        "min": 1
+      }
+    ]
+  }
+}

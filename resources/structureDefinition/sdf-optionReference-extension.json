@@ -1,0 +1,50 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "sdf-optionReference",
+  "url": "http://ehelse.no/fhir/StructureDefinition/sdf-optionReference",
+  "name": "OptionReference",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Questionnaire.item"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://ehelse.no/fhir/StructureDefinition/sdf-optionReference"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Extension.value[x]:valueReference",
+        "path": "Extension.value[x]",
+        "sliceName": "valueReference",
+        "type": [
+          {
+            "code": "Reference"
+          }
+        ]
+      }
+    ]
+  }
+}

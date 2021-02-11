@@ -1,0 +1,95 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "maxDecimalPlaces",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+      "valueCode": "fhir"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+      "valueInteger": 1
+    }
+  ],
+  "url": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces",
+  "version": "4.0.1",
+  "name": "MaxDecimalPlaces",
+  "status": "draft",
+  "date": "2014-04-27",
+  "publisher": "Health Level Seven International (FHIR Infrastructure)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/fiwg"
+        }
+      ]
+    }
+  ],
+  "description": "Identifies the maximum number of decimal places that may be specified for the data element.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Questionnaire.item"
+    },
+    {
+      "type": "element",
+      "expression": "ElementDefinition"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Maximum digits after decimal",
+        "definition": "Identifies the maximum number of decimal places that may be specified for the data element.",
+        "max": "1",
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "N/A"
+          },
+          {
+            "identity": "rim",
+            "map": "N/A (MIF-level)"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/StructureDefinition/maxDecimalPlaces"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 1,
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
+      }
+    ]
+  }
+}

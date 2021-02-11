@@ -1,0 +1,60 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "validationText",
+  "meta": {
+    "lastUpdated": "2018-02-02T14:17:18.905+01:00"
+  },
+  "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
+  "name": "ValidationText",
+  "status": "draft",
+  "date": "2017-07-14T12:59:42.6764629+02:00",
+  "publisher": "The Norwegian Directorate of eHealth",
+  "description": "Instructions to help the respondent if the item/field does not validate.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "Questionnaire.item"
+    },
+    {
+      "type": "element",
+      "expression": "ElementDefinition"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://ehelse.no/fhir/StructureDefinition/validationtext"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Extension.value[x]:valueString",
+        "path": "Extension.value[x]",
+        "sliceName": "valueString",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      }
+    ]
+  }
+}
